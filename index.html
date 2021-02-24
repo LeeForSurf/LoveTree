@@ -30,7 +30,7 @@
 <audio class="song-audio-autoplay" controls loop style="display: none;visibility: hidden" id="vd">
 --> 
 <audio id="vd" preload="audio" loop>
-    <source src="https://www.jsdaima.com/Upload/1482045718/renxi.mp3" type="audio/mp3"/>
+    <source src="./index_files/music.mp3" type="audio/mp3"/>
 </audio>
 <style type="text/css">
     .rotateImages{
@@ -60,7 +60,7 @@
             </div>
         </div>
         <div id="clock-box">
-                    <span id="clock-box-inside-text">
+                    <span id="clock-box-inside-text" style="color:#555;font-size: 24px;">
 					</span>
             <div id="clock"></div>
         </div>
@@ -75,7 +75,7 @@
     }).reduce((a, b) => {
         return a + b;
     }))
-    $("#clock-box-inside-text").html(`亲爱的 ${config.names[0]}，我喜欢你，我们已经相识了</span>`)
+    $("#clock-box-inside-text").html(`亲爱的<span style="color:purple;font-size: 30px;">${config.names[0]}，我喜欢你，</span>我们已经相识了`)
 </script>
 
 <script>
@@ -236,10 +236,10 @@
 	document.addEventListener("click",function(){
 		var music = document.getElementById("vd");//获取ID
 		if (music.paused) { //判读是否播放  
-		    music.paused=false;
 		    pro = music.play(); //没有就播放 
-		    console.log(pro)
-		} 
+		} else {
+            music.pause();
+        }
 	})
 </script>
 
